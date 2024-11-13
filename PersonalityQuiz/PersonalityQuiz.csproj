@@ -59,9 +59,13 @@
 	  <None Remove="Resources\Images\family.png" />
 	  <None Remove="Resources\Images\friends.png" />
 	  <None Remove="Resources\Images\fun.png" />
+	  <None Remove="Resources\Images\laugh.png" />
 	  <None Remove="Resources\Images\outside.png" />
 	  <None Remove="Resources\Images\points.png" />
+	  <None Remove="Resources\Images\sad.png" />
+	  <None Remove="Resources\Images\silly.png" />
 	  <None Remove="Resources\Images\thinker.png" />
+	  <None Remove="Resources\Images\thumbup.png" />
 	</ItemGroup>
 
 	<ItemGroup>

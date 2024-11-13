@@ -32,12 +32,12 @@ namespace PersonalityQuiz
             questions.Add(new Question() { QuestionText = "4. The things you've liked for a long time are still exciting to you.", QuestionImage = "fun.png" });
             questions.Add(new Question() { QuestionText = "5. You want one free point on this quiz.", QuestionImage = "points.png" });
 
-            results.Add(new Result() { ResultText = "You are probably trying to appear cool or rebellious by answering 'No' to everything.", ResultImage = "" });
-            results.Add(new Result() { ResultText = "You can be glad that you had even one question you could answer 'Yes' to.", ResultImage = "" });
-            results.Add(new Result() { ResultText = "You are perfectly balanced, as all things should be.", ResultImage = "" });
-            results.Add(new Result() { ResultText = "You are content with your life for the most part.", ResultImage = "" });
-            results.Add(new Result() { ResultText = "You are maintaining a very positive attitude.", ResultImage = "" });
-            results.Add(new Result() { ResultText = "You are a yes-man who simply must always agree with what other people tell you.", ResultImage = "" });
+            results.Add(new Result() { ResultText = "You are probably trying to appear cool or rebellious by answering 'No' to everything.", ResultImage = "laugh.png" });
+            results.Add(new Result() { ResultText = "You can be glad that you had even one question you could answer 'Yes' to.", ResultImage = "sad.png" });
+            results.Add(new Result() { ResultText = "You are perfectly balanced, as all things should be.", ResultImage = "silly.png" });
+            results.Add(new Result() { ResultText = "You are content with your life for the most part.", ResultImage = "thumbup.png" });
+            results.Add(new Result() { ResultText = "You are maintaining a very positive attitude.", ResultImage = "thumbup.png" });
+            results.Add(new Result() { ResultText = "You are a yes-man who simply must always agree with what other people tell you.", ResultImage = "laugh.png" });
 
             QuestionLabel.Text = questions[0].QuestionText;
             QuestionImage.Source = questions[0].QuestionImage;
