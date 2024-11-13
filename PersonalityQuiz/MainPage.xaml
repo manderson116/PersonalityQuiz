@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonalityQuiz.MainPage"
+             Shell.BackgroundColor="Beige"
+             Shell.ForegroundColor="Black">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            BackgroundColor="Beige"
+            >
+            
+            <Image
+                Source="thinker.png"
+                HeightRequest="185"
+                Aspect="AspectFit" />
+
+            <Label
+                Text="Personality Quiz"
+                TextColor="Black"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Image
+                x:Name="QuestionImage"
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit" />
+            
+            <Label
+                x:Name="QuestionLabel"
+                Text="Please wait..."
+                TextColor="Black"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2" />
+
+            <Grid
+                x:Name="TrueFalseButtons"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                IsVisible="False" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout>
+
+                </StackLayout>
+
+                <Button
+                    Grid.Column="0"
+                    x:Name="TrueBtn"
+                    Text="True"
+                    BackgroundColor="LightGreen"
+                    Clicked="TrueBtnClicked"
+                    HorizontalOptions="Fill"
+                    Margin="2" />
+
+                <Button
+                    Grid.Column="1"
+                    x:Name="FalseBtn"
+                    Text="False"
+                    BackgroundColor="PaleVioletRed"
+                    Clicked="FalseBtnClicked"
+                    HorizontalOptions="Fill"
+                    Margin="2" />
+            </Grid>
+            
+            <Label
+                x:Name="TrueFalseSwipe"
+                Text="Swipe right for True &#10; Swipe left for False"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"
+                IsVisible="True" />
+        </VerticalStackLayout>
+
+        <ScrollView.GestureRecognizers>
+            <!-- Swipe right for true -->
+            <SwipeGestureRecognizer Direction="Right" Swiped="TrueBtnClicked"/>
+            <!-- Swipe left for false -->
+            <SwipeGestureRecognizer Direction="Left" Swiped="FalseBtnClicked"/>
+            <!-- Swipe up to reset -->
+            <SwipeGestureRecognizer Direction="Up" Swiped="ResetQuestions"/>
+        </ScrollView.GestureRecognizers>
+    </ScrollView>
+
+</ContentPage>
