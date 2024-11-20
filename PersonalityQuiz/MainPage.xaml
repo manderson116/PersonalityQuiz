@@ -76,6 +76,18 @@
                 TextColor="Black"
                 HorizontalTextAlignment="Center"
                 IsVisible="True" />
+            
+            <CollectionView x:Name="questionList" Grid.Row="5">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,4*,2*">
+                            <Label Text="{Binding Id}" TextColor="{StaticResource Primary}"/>
+                            <Label Grid.Column="1" Text="{Binding Text}" TextColor="{StaticResource Primary}"/>
+                            <Label Grid.Column="2" Text="{Binding Image}" TextColor="{StaticResource Primary}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
 
         <ScrollView.GestureRecognizers>

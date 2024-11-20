@@ -1,12 +1,15 @@
-﻿namespace PersonalityQuiz
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
+﻿namespace PersonalityQuiz;
 
-            MainPage = new AppShell();
-        }
+public partial class App : Application
+{
+    public static QuestionRepository QuestionRepo { get; private set; }
+
+    public App(QuestionRepository repo)
+    {
+        InitializeComponent();
+
+        MainPage = new AppShell();
+
+        QuestionRepo = repo;
     }
 }
