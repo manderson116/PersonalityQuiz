@@ -42,7 +42,7 @@ namespace PersonalityQuiz
             }
 
             List<Question> outquestions = App.QuestionRepo.GetAllQuestions();
-            questionList.ItemsSource = outquestions;
+            //questionList.ItemsSource = outquestions;
             
             results.Add(new Result() { ResultText = "You are probably trying to appear cool or rebellious by answering 'No' to everything.", ResultImage = "laugh.png" });
             results.Add(new Result() { ResultText = "You can be glad that you had even one question you could answer 'Yes' to.", ResultImage = "sad.png" });
@@ -50,7 +50,9 @@ namespace PersonalityQuiz
             results.Add(new Result() { ResultText = "You are content with your life for the most part.", ResultImage = "thumbup.png" });
             results.Add(new Result() { ResultText = "You are maintaining a very positive attitude.", ResultImage = "thumbup.png" });
             results.Add(new Result() { ResultText = "You are a yes-man who simply must always agree with what other people tell you.", ResultImage = "laugh.png" });
-            
+
+            SemanticScreenReader.Announce(TitleLabel.Text);
+            SemanticScreenReader.Announce(TrueFalseSwipe.Text);
             NextQuestion();
         }
 
@@ -84,6 +86,7 @@ namespace PersonalityQuiz
                 questionIndex++;
                 QuestionLabel.Text = App.QuestionRepo.GetById(questionIndex).Id + ". " + App.QuestionRepo.GetById(questionIndex).Text;
                 QuestionImage.Source = App.QuestionRepo.GetById(questionIndex).Image;
+                SemanticScreenReader.Announce(QuestionLabel.Text);
             }
         }
 
@@ -113,6 +116,8 @@ namespace PersonalityQuiz
                 QuestionLabel.Text += "\n" + results[score].ResultText;
                 QuestionImage.Source = results[score].ResultImage;
             }
+            SemanticScreenReader.Announce(QuestionLabel.Text);
+            SemanticScreenReader.Announce(TrueFalseSwipe.Text);
         }
     }
 }
